@@ -6,12 +6,20 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["content.js", "main.js"]
     }
   ],
   "browser_action": {
     "default_popup": "popup.html",
     "default_title": "notespass"
   },
-  "permissions": []
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "storage",
+    "contextMenus"
+  ]
 }
